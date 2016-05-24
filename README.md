@@ -15,7 +15,7 @@ npm install polyomino
 - `Free(n)`: return a Set of free polyominoes of order `n`.
 
 
-## Example
+## Examples
 
 ```
 $ node -e "require('polyomino').OneSided(4).forEach(function(item){console.log(item.toString2() + '\n')});"
@@ -46,4 +46,28 @@ $ node -e "require('polyomino').OneSided(4).forEach(function(item){console.log(i
 ██
 ██
 ██
+```
+
+```
+$ node -e "require('polyomino').OneSided(8).first().rotations().forEach(function(item){console.log(item.toString2() + '\n')});"
+██        
+██████████
+  ██    ██
+
+  ████
+  ██  
+  ██  
+  ████
+████  
+
+██    ██  
+██████████
+        ██
+
+  ████
+████  
+  ██  
+  ██  
+████  
+
 ```

@@ -1,6 +1,6 @@
 {
   "name": "polyomino",
-  "version": "0.0.1",
+  "version": "0.0.1-1",
   "description": "polyomino",
   "repository": "wjordan/polyomino",
   "main": "dist/src/index",

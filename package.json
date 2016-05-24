@@ -3,10 +3,12 @@
   "version": "0.0.1",
   "description": "polyomino",
   "repository": "wjordan/polyomino",
-  "main": "index.ts",
+  "main": "dist/src/index",
+  "typings": "typings/index",
   "scripts": {
     "tsd": "tsd install",
     "tsconfig": "tsconfig && tsc",
+    "prepublish": "npm run tsd && npm run tsconfig && cp src/index.js dist/src/",
     "prestart": "npm run tsd && npm run tsconfig",
     "start": "node ./test.js",
     "pretest": "npm run tsd && npm run tsconfig",

@@ -7,20 +7,18 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": false,
-        "target": "ES5"
+        "target": "ES5",
+        "outDir": "dist"
     },
     "filesGlob": [
-        "./**/*.ts",
-        "!./node_modules/**/!(immutable.d).ts"
+        "./src/*.ts",
+        "./test/*.ts",
+        "./node_modules/immutable/dist/immutable.d.ts",
+        "./typings/index.d.ts"
     ],
     "files": [
-        "./typings/tsd.d.ts",
         "./node_modules/immutable/dist/immutable.d.ts",
-        "./typings/assertion-error/assertion-error.d.ts",
-        "./typings/blessed.d.ts",
-        "./typings/chai/chai.d.ts",
-        "./typings/mocha/mocha.d.ts",
-        "./typings/node/node.d.ts",
+        "./typings/index.d.ts",
         "./src/FreePolyomino.ts",
         "./src/OneSidedPolyomino.ts",
         "./src/Point.ts",

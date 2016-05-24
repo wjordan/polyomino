@@ -1,5 +1,7 @@
+dist/
 *.js
-Tetromi/
+!src/index.js
+*.d.ts
 
 ### JetBrains
 *.iml
@@ -40,5 +42,3 @@ node_modules
 ### TypeScript
 
 typings/*
-!typings/blessed.d.ts
-!typings/random-js

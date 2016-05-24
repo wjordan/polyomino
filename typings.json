@@ -1,0 +1,9 @@
+{
+  "name": "polyomino",
+  "globalDependencies": {
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#98d3168c2c570352a3a7393788e2ec9fbb08ade6",
+    "mocha": "github:DefinitelyTyped/DefinitelyTyped/mocha/mocha.d.ts#c0d876601e0f8236fd6b57626eb62c4e485f1563",
+    "assertion-error": "github:DefinitelyTyped/DefinitelyTyped/assertion-error/assertion-error.d.ts#c0d876601e0f8236fd6b57626eb62c4e485f1563",
+    "chai": "github:DefinitelyTyped/DefinitelyTyped/chai/chai.d.ts#c0d876601e0f8236fd6b57626eb62c4e485f1563"
+  }
+}

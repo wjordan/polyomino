@@ -1,0 +1,29 @@
+{
+  "name": "polyomino",
+  "version": "0.0.1",
+  "description": "polyomino",
+  "repository": "wjordan/polyomino",
+  "main": "index.ts",
+  "scripts": {
+    "tsd": "tsd install",
+    "tsconfig": "tsconfig && tsc",
+    "prestart": "npm run tsd && npm run tsconfig",
+    "start": "node ./test.js",
+    "pretest": "npm run tsd && npm run tsconfig",
+    "test": "mocha"
+  },
+  "author": "Will Jordan",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "tsconfig": "^2.2.0",
+    "tsconfig-glob": "^0.4.1",
+    "tslint": "^3.5.0",
+    "typescript": "1.8.7",
+    "tsd": "^0.6.5"
+  },
+  "dependencies": {
+    "immutable": "*"
+  }
+}

@@ -6,26 +6,27 @@
   "main": "dist/src/index",
   "typings": "typings/index",
   "scripts": {
-    "tsd": "tsd install",
+    "typings": "typings install",
     "tsconfig": "tsconfig && tsc",
-    "prepublish": "npm run tsd && npm run tsconfig && cp src/index.js dist/src/",
-    "prestart": "npm run tsd && npm run tsconfig",
+    "prepublish": "npm run typings && npm run tsconfig && cp src/index.js dist/src/",
+    "prestart": "npm run typings && npm run tsconfig",
     "start": "node ./test.js",
-    "pretest": "npm run tsd && npm run tsconfig",
+    "pretest": "npm run typings && npm run tsconfig",
     "test": "mocha"
   },
   "author": "Will Jordan",
   "license": "GPL-3.0",
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^2.4.5",
-    "tsconfig": "^2.2.0",
+    "mocha": "^3.2.0",
+    "ts-node": "^2.1.0",
+    "tsconfig": "^5.0.3",
     "tsconfig-glob": "^0.4.1",
-    "tslint": "^3.5.0",
-    "typescript": "1.8.7",
-    "tsd": "^0.6.5"
+    "tslint": "^4.5.1",
+    "typescript": "^2.2.1",
+    "typings": "^2.1.0"
   },
   "dependencies": {
-    "immutable": "*"
+    "immutable": "^3.8.1"
   }
 }

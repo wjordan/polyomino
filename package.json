@@ -4,7 +4,7 @@
   "description": "polyomino",
   "repository": "wjordan/polyomino",
   "main": "dist/src/index",
-  "typings": "typings/index",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "typings": "typings install",
     "tsconfig": "tsconfig && tsc",

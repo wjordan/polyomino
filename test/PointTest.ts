@@ -2,6 +2,11 @@ import { expect } from "chai";
 import {Point} from "../src";
 
 describe("Point", () => {
+  it("hashCode", () => {
+    const p1 = new Point(2, 3);
+    expect(p1.hashCode()).to.equal(65);
+  });
+
   it("add", () => {
     const p1 = new Point(2, 3);
     const p2 = new Point(4, 6);

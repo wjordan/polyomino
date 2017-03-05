@@ -14,12 +14,10 @@ npm install polyomino
 - `OneSided(n)`: return a Set of one-sided polyominoes of order `n`.
 - `Free(n)`: return a Set of free polyominoes of order `n`.
 
-
 ## Examples
 
 ```
-$ node -e "require('polyomino').OneSided(4).forEach(function(item){console.log(item.toString2() + '\n')});"
-
+$ node -e 'require("polyomino").OneSidedPolyomino.get(4).forEach(item => console.log(`${item.toString2()}\n`));'
 ██  
 ████
 ██  
@@ -49,25 +47,26 @@ $ node -e "require('polyomino').OneSided(4).forEach(function(item){console.log(i
 ```
 
 ```
-$ node -e "require('polyomino').OneSided(8).first().rotations().forEach(function(item){console.log(item.toString2() + '\n')});"
-██        
+$ node -e 'require("polyomino").Polyomino.get(10).first().rotations().forEach(item => console.log(`${item.toString2()}\n`));'
+  ████
+  ██  ██
 ██████████
-  ██    ██
+      ██
 
-  ████
-  ██  
-  ██  
-  ████
-████  
+    ██
+  ██████
+██  ██
+██████
+    ██
 
-██    ██  
+  ██
 ██████████
-        ██
+  ██  ██
+    ████
 
-  ████
-████  
-  ██  
-  ██  
-████  
-
+  ██
+  ██████
+  ██  ██
+██████
+  ██
 ```

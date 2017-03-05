@@ -6,7 +6,10 @@ export class Point {
   public static fromList(p: List<number>): Point { return Point.fromArray(p.toArray()); }
 
   constructor(public x: number, public y: number) {}
-  public create(x: number, y: number): this { return new (this as any).constructor(x, y); }
+  public create(x: number, y: number): this {
+    //noinspection JSPotentiallyInvalidConstructorUsage
+    return new (this as any).constructor(x, y);
+  }
 
   public toString(): string { return `[${this.x}, ${this.y}]`; }
   public equals(other: this): boolean { return this.x === other.x && this.y === other.y; }

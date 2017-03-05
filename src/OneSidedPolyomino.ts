@@ -1,5 +1,5 @@
 import {Polyomino} from "./Polyomino";
-import Set = Immutable.Set;
+import {Set} from "immutable";
 
 export class OneSidedPolyomino extends Polyomino {
   symmetries():Set<Polyomino> {

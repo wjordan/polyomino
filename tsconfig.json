@@ -1,33 +1,19 @@
 {
-    "compileOnSave": true,
-    "compilerOptions": {
-        "declaration": true,
-        "module": "commonjs",
-        "noImplicitAny": false,
-        "removeComments": true,
-        "preserveConstEnums": true,
-        "sourceMap": false,
-        "target": "ES5",
-        "outDir": "dist"
-    },
-    "filesGlob": [
-        "./src/*.ts",
-        "./test/*.ts",
-        "./node_modules/immutable/dist/immutable.d.ts",
-        "./typings/index.d.ts"
-    ],
-    "files": [
-        "./node_modules/immutable/dist/immutable.d.ts",
-        "./typings/index.d.ts",
-        "./src/FreePolyomino.ts",
-        "./src/OneSidedPolyomino.ts",
-        "./src/Point.ts",
-        "./src/PointInt.ts",
-        "./src/Polyomino.ts",
-        "./test/PointTest.ts",
-        "./test/PolyominoTest.ts"
-    ],
-    "atom": {
-        "rewriteTsconfig": true
-    }
+  "compileOnSave": true,
+  "compilerOptions": {
+    "declaration": true,
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": false,
+    "target": "ES5",
+    "outDir": "dist"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

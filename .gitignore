@@ -1,6 +1,5 @@
 dist/
 *.js
-!src/index.js
 *.d.ts
 
 ### JetBrains

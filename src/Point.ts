@@ -1,7 +1,4 @@
-import * as Immutable from "immutable";
-import Iterable = Immutable.Iterable;
-import List = Immutable.List;
-import Set = Immutable.Set;
+import {Iterable, Set, List} from "immutable";
 
 export class Point {
   static XY:Set<number> = Set.of(0, 1);

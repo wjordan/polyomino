@@ -3,16 +3,12 @@
   "version": "0.0.1-1",
   "description": "polyomino",
   "repository": "wjordan/polyomino",
-  "main": "dist/src/index",
-  "typings": "dist/index.d.ts",
+  "main": "dist/index",
+  "types": "dist/index",
   "scripts": {
-    "typings": "typings install",
-    "tsconfig": "tsconfig && tsc",
-    "prepublish": "npm run typings && npm run tsconfig && cp src/index.js dist/src/",
-    "prestart": "npm run typings && npm run tsconfig",
     "start": "node ./test.js",
-    "pretest": "npm run typings && npm run tsconfig",
-    "test": "mocha"
+    "lint": "tslint",
+    "test": "mocha -r ts-node/register test/**/*.ts"
   },
   "author": "Will Jordan",
   "license": "GPL-3.0",
@@ -20,13 +16,13 @@
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
     "ts-node": "^2.1.0",
-    "tsconfig": "^5.0.3",
-    "tsconfig-glob": "^0.4.1",
     "tslint": "^4.5.1",
-    "typescript": "^2.2.1",
-    "typings": "^2.1.0"
+    "typescript": "^2.2.1"
   },
   "dependencies": {
+    "@types/chai": "^3.4.35",
+    "@types/mocha": "^2.2.39",
+    "@types/node": "^7.0.5",
     "immutable": "^3.8.1"
   }
 }

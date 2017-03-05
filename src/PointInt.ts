@@ -1,11 +1,5 @@
 import {Point} from "./Point";
-// noinspection ES6UnusedImports,TsLint
-import * as Immutable from "immutable";
-import Iterable = Immutable.Iterable;
-import Range = Immutable.Range;
-import Set = Immutable.Set;
-import List = Immutable.List;
-import Seq = Immutable.Seq;
+import {Iterable, Set, Range} from "immutable";
 
 export class PointInt extends Point {
   static ZERO:PointInt = new PointInt(0, 0);

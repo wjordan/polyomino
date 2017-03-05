@@ -2,6 +2,11 @@ import { expect } from "chai";
 import {FreePolyomino, OneSidedPolyomino, Polyomino} from "../src";
 
 describe("Polyomino", () => {
+  it("equals", () => {
+    const tetromino = Polyomino.get(4).first();
+    expect(tetromino.equals(tetromino)).to.be.true;
+  });
+
   describe("Enumerate polyominoes", () => {
     it("should enumerate the fixed polyominoes", () => {
       const fixedTetrominoes = Polyomino.get(4);

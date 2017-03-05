@@ -37,12 +37,10 @@ export class Polyomino {
     ).rangeXY().map((row) => row.map((col) => this.points.includes(col) ? "██" : "  ").join("")).join("\n");
   }
 
-  //noinspection JSUnusedGlobalSymbols
   public equals(other: this): boolean {
     return this.points.equals(other.points);
   }
 
-  //noinspection JSUnusedGlobalSymbols
   public hashCode(): number {
     return this.points.hashCode();
   }

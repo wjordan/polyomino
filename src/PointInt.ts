@@ -1,25 +1,25 @@
+import {Iterable, Range, Set} from "immutable";
 import {Point} from "./Point";
-import {Iterable, Set, Range} from "immutable";
 
 export class PointInt extends Point {
-  static ZERO:PointInt = new PointInt(0, 0);
-  constructor(x:number, y:number) {
-    // noinspection TsLint
-    super(x|0,y|0);
+  public static ZERO: PointInt = new PointInt(0, 0);
+  constructor(x: number, y: number) {
+    //noinspection TsLint,TypeScriptUnresolvedFunction
+    super(Math.trunc(x), Math.trunc(y));
   }
-  range():Set<PointInt> {
-    return Set<PointInt>(Range(0, this.x).flatMap(x =>
-      Range(0, this.y).map(y =>
-        new PointInt(x, y)
-      )
+  public range(): Set<PointInt> {
+    return Set<PointInt>(Range(0, this.x).flatMap((x) =>
+      Range(0, this.y).map((y) =>
+        new PointInt(x, y),
+      ),
     ));
   }
-  rangeXY():Iterable<number, Iterable<number, PointInt>> {
-    return Range(0, this.y).map(y =>
-        Range(0, this.x).map(x => new PointInt(x, y))
+  public rangeXY(): Iterable<number, Iterable<number, PointInt>> {
+    return Range(0, this.y).map((y) =>
+        Range(0, this.x).map((x) => new PointInt(x, y)),
     );
   }
-  steps():Set<PointInt> {
-    return Set.of(1, -1).flatMap(z => this.xy(x => x + z)).toSet();
+  public steps(): Set<PointInt> {
+    return Set.of(1, -1).flatMap((z) => this.xy((x) => x + z)).toSet();
   }
 }

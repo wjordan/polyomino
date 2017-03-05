@@ -1,8 +1,8 @@
-import {Polyomino} from "./Polyomino";
 import {Set} from "immutable";
+import {Polyomino} from "./Polyomino";
 
 export class OneSidedPolyomino extends Polyomino {
-  symmetries():Set<Polyomino> {
+  public symmetries(): Set<Polyomino> {
     return this.rotations();
   }
 }

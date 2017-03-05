@@ -6,8 +6,8 @@
   "main": "dist/index",
   "types": "dist/index",
   "scripts": {
-    "start": "node ./test.js",
-    "lint": "tslint",
+    "build": "tsc",
+    "lint": "tslint --project ./tsconfig.json --type-check && tslint 'test/**/*.ts'",
     "test": "mocha -r ts-node/register test/**/*.ts"
   },
   "author": "Will Jordan",
@@ -17,11 +17,11 @@
     "mocha": "^3.2.0",
     "ts-node": "^2.1.0",
     "tslint": "^4.5.1",
-    "typescript": "^2.2.1"
+    "typescript": "^2.2.1",
+    "@types/chai": "^3.4.35",
+    "@types/mocha": "^2.2.39"
   },
   "dependencies": {
-    "@types/chai": "^3.4.35",
-    "@types/mocha": "^2.2.39",
     "@types/node": "^7.0.5",
     "immutable": "^3.8.1"
   }

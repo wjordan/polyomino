@@ -1,7 +1,5 @@
 import { expect } from "chai";
-import {Polyomino} from "../src/Polyomino";
-import {FreePolyomino} from "../src/FreePolyomino";
-import {OneSidedPolyomino} from "../src/OneSidedPolyomino";
+import {FreePolyomino, OneSidedPolyomino, Polyomino} from "../src";
 
 describe("Polyomino", () => {
   describe("Enumerate polyominoes", () => {
@@ -21,8 +19,7 @@ describe("Polyomino", () => {
     });
 
     it("should apply offsets consistently", () => {
-      const rotations = OneSidedPolyomino.get(4).toList().flatMap(poly => poly.rotationsWithDuplicates());
-      console.log(`tetrominoes:\n${rotations.map(poly => poly.toString2()).join("\n\n")}`);
+      const rotations = OneSidedPolyomino.get(4).toList().flatMap((poly) => poly.rotationsWithDuplicates());
       expect(rotations.size).to.equal(28);
     });
   });

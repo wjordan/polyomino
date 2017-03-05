@@ -1,12 +1,16 @@
 import { expect } from "chai";
-import {PointInt} from "../src/PointInt";
-const P = PointInt;
-type P = PointInt;
+import {Point} from "../src";
 
 describe("Point", () => {
-  it("should applyAll", () => {
-    const point:P = new P(20, -10);
-    const newPoint:PointInt = point.applyBoth(z => Math.max(-1, Math.min(1, z)));
-    expect(newPoint.equals(new PointInt(1, -1))).to.be.true;
+  it("add", () => {
+    const p1 = new Point(2, 3);
+    const p2 = new Point(4, 6);
+    expect(p1.add(p1).equals(p2)).to.be.true;
+  });
+
+  it("applyBoth", () => {
+    const point: Point = new Point(20, -10);
+    const newPoint: Point = point.applyBoth((z) => Math.max(-1, Math.min(1, z)));
+    expect(newPoint.equals(new Point(1, -1))).to.be.true;
   });
 });

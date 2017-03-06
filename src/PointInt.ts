@@ -9,19 +9,16 @@ export class PointInt extends Point {
     super(Math.trunc(x), Math.trunc(y));
   }
 
-  public range(): Set<PointInt> {
-    return Set<PointInt>(Range(0, this.x).flatMap((x) =>
-      Range(0, this.y).map((y) =>
-        new PointInt(x, y),
-      ),
+  public range(): Iterable<number, Iterable<number, PointInt>> {
+    return Range(0, this.y + 1).map((y) =>
+        Range(0, this.x + 1).map((x) =>
+          new PointInt(x, y),
     ));
   }
 
-  public rangeXY(): Iterable<number, Iterable<number, PointInt>> {
-    return Range(0, this.y).map((y) =>
-        Range(0, this.x).map((x) =>
-          new PointInt(x, y),
-    ));
+  public map<M>(f: (point: PointInt) => M): Iterable<number, Iterable<number, M>> {
+    return this.range().
+      map((y) => y.map((cell) => f(cell)));
   }
 
   public steps(): Set<PointInt> {

@@ -1,9 +1,8 @@
 import {Iterable, List, Set} from "immutable";
 
 export class Point {
-  public static XY: Set <number> = Set.of(0, 1);
-  public static fromArray(xy: number[]): Point { return new Point(xy[0], xy[1]); }
-  public static fromList(p: List<number>): Point { return Point.fromArray(p.toArray()); }
+  public static ZERO: Point = new Point(0, 0);
+  public static XY: Set<number> = Set.of(0, 1);
 
   constructor(public x: number, public y: number) {}
   public create(x: number, y: number): this {
@@ -25,7 +24,7 @@ export class Point {
 
   // Apply a unary operation to both x and y, returning a new Point.
   public applyBoth(f: (i: number) => number): this {
-    return Set.of(0, 1).reduce((val: this, index) => val.update(index, f), this.create(this.x, this.y));
+    return Point.XY.reduce((val: this, index) => val.update(index, f), this.create(this.x, this.y));
   }
 
   // Apply a unary operation to x and y separately, returning a List of the resulting objects.

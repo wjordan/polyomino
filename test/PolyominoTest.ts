@@ -7,6 +7,14 @@ describe("Polyomino", () => {
     expect(tetromino.equals(tetromino)).to.be.true;
   });
 
+  it("render", () => {
+    const renderString = `
+██    
+██████
+`.trim();
+    expect(Polyomino.get(4).first().render()).to.equal(renderString);
+  });
+
   describe("Enumerate polyominoes", () => {
     it("should enumerate the fixed polyominoes", () => {
       const fixedTetrominoes = Polyomino.get(4);

@@ -1,5 +1,4 @@
-// noinspection TsLint,ES6UnusedImports
-import {List, Range, Set} from "immutable";
+import {List, Repeat, Set} from "immutable";
 import {PointInt} from "./PointInt";
 
 export class Polyomino {
@@ -30,11 +29,11 @@ export class Polyomino {
   }
 
   // Visual 2d representation of the polyomino.
-  public toString2(): string {
-    return new PointInt(
-      this.points.maxBy((p) => p.x).x + 1,
-      this.points.maxBy((p) => p.y).y + 1,
-    ).rangeXY().map((row) => row.map((col) => this.points.includes(col) ? "██" : "  ").join("")).join("\n");
+  public render(): string {
+    return this.max().
+      map((point) => this.points.includes(point) ? "██" : "  ").
+      map((row) => row.join("")).
+      join("\n");
   }
 
   public equals(other: this): boolean {
@@ -47,6 +46,13 @@ export class Polyomino {
 
   public transform(f: (point: PointInt) => PointInt): Polyomino {
     return new Polyomino(this.points.map(f).toSet());
+  }
+
+  public max(): PointInt {
+    return new PointInt(
+      this.points.maxBy((p) => p.x).x,
+      this.points.maxBy((p) => p.y).y,
+    );
   }
 
   // Reduce a polyomino into canonical form by enumerating all symmetries.
@@ -64,14 +70,11 @@ export class Polyomino {
   }
 
   public rotations(): Set<Polyomino> {
-    return Range(0, 3).reduce(
-      (r) => r.add(r.last().rotateLeft()),
-      Set.of(new Polyomino(this.points)),
-    );
+    return Set(this.rotationsWithDuplicates());
   }
 
   public rotationsWithDuplicates(): List<Polyomino> {
-    return Range(0, 3).reduce(
+    return Repeat(null, 3).reduce(
       (r) => r.push(r.last().rotateLeft()),
       List.of(new Polyomino(this.points)),
     );

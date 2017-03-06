@@ -3,6 +3,6 @@ import {Polyomino} from "./Polyomino";
 
 export class OneSidedPolyomino extends Polyomino {
   public symmetries(): Set<Polyomino> {
-    return this.rotations();
+    return this.rotations().toSet();
   }
 }

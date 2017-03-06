@@ -18,9 +18,9 @@ describe("Point", () => {
     expect(p1.add(p1).equals(p2)).to.be.true;
   });
 
-  it("applyBoth", () => {
+  it("applyXY", () => {
     const point: Point = new Point(20, -10);
-    const newPoint: Point = point.applyBoth((z) => Math.max(-1, Math.min(1, z)));
+    const newPoint: Point = point.applyXY((z) => Math.max(-1, Math.min(1, z)));
     expect(newPoint.equals(new Point(1, -1))).to.be.true;
   });
 });

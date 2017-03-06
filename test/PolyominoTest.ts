@@ -32,7 +32,7 @@ describe("Polyomino", () => {
     });
 
     it("should apply offsets consistently", () => {
-      const rotations = OneSidedPolyomino.get(4).toList().flatMap((poly) => poly.rotationsWithDuplicates());
+      const rotations = OneSidedPolyomino.get(4).toList().flatMap((poly) => poly.rotations());
       expect(rotations.size).to.equal(28);
     });
   });

@@ -17,7 +17,7 @@ npm install polyomino
 ## Examples
 
 ```
-$ node -e 'require("polyomino").OneSidedPolyomino.get(4).forEach(item => console.log(`${item.toString2()}\n`));'
+$ node -e 'require("polyomino").OneSidedPolyomino.get(4).forEach(item => console.log(`${item.render()}\n`));'
 ██  
 ████
 ██  
@@ -47,7 +47,7 @@ $ node -e 'require("polyomino").OneSidedPolyomino.get(4).forEach(item => console
 ```
 
 ```
-$ node -e 'require("polyomino").Polyomino.get(10).first().rotations().forEach(item => console.log(`${item.toString2()}\n`));'
+$ node -e 'require("polyomino").Polyomino.get(10).first().rotations().forEach(item => console.log(`${item.render()}\n`));'
   ████
   ██  ██
 ██████████

@@ -78,7 +78,8 @@ export class Polyomino {
   }
 
   public reflections(): Set<Polyomino> {
-    return Set.of(1, -1).flatMap((i) => Set.of(1, -1).map((j) =>
+    const reflect = Set.of(1, -1);
+    return reflect.flatMap((i) => reflect.map((j) =>
       this.map((point) => point.scale(new PointInt(i, j))),
     )).toSet();
   }

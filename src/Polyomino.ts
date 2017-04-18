@@ -36,10 +36,12 @@ export class Polyomino {
       join("\n");
   }
 
+  // A Polyomino is equal if its Set of Points are equal.
   public equals(other: this): boolean {
     return this.points.equals(other.points);
   }
 
+  // A Polyomino's hashCode is the hashCode of its Set of Points.
   public hashCode(): number {
     return this.points.hashCode();
   }
